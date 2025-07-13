@@ -1,1 +1,940 @@
-hello !!!@@@@@@@@@#######
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechCon 2023 | Annual Technology Conference</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #2c3e50;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        img {
+            max-width: 100%;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .logo a {
+            color: white;
+        }
+        
+        nav ul {
+            display: flex;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: white;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #3498db;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/3.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .about h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #2c3e50;
+        }
+        
+        .about p {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-size: 18px;
+        }
+        
+        /* Speakers Section */
+        .speakers {
+            padding: 80px 0;
+            background-color: #ecf0f1;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: #2c3e50;
+        }
+        
+        .speakers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .speaker-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .speaker-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .speaker-img {
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .speaker-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .speaker-card:hover .speaker-img img {
+            transform: scale(1.1);
+        }
+        
+        .speaker-info {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .speaker-info h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .speaker-info p {
+            color: #7f8c8d;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: #2980b9;
+        }
+        
+        /* Schedule Section */
+        .schedule {
+            padding: 80px 0;
+        }
+        
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+        
+        .schedule-table th, .schedule-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .schedule-table th {
+            background-color: #2c3e50;
+            color: white;
+        }
+        
+        .schedule-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .schedule-table tr:hover {
+            background-color: #e3e3e3;
+        }
+        
+        .time-col {
+            width: 15%;
+            font-weight: bold;
+        }
+        
+        .event-col {
+            width: 70%;
+        }
+        
+        .location-col {
+            width: 15%;
+        }
+        
+        /* Registration Section */
+        .registration {
+            padding: 80px 0;
+            background-color: #ecf0f1;
+        }
+        
+        .registration-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        .form-group textarea {
+            height: 120px;
+        }
+        
+        .submit-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background-color: #2980b9;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #3498db;
+        }
+        
+        .footer-social {
+            margin-bottom: 20px;
+        }
+        
+        .footer-social a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #34495e;
+            color: white;
+            border-radius: 50%;
+            margin: 0 10px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+        
+        .footer-social a:hover {
+            background-color: #3498db;
+        }
+        
+        .copyright {
+            font-size: 14px;
+            color: #bdc3c7;
+        }
+        
+        /* Page-specific styles */
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+        
+        .page-header h1 {
+            font-size: 48px;
+        }
+        
+        .page-content {
+            padding: 80px 0;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .speakers-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .registration-form {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">TechCon 2023</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="speakers.html">Speakers</a></li>
+                    <li><a href="schedule.html">Schedule</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home Page -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>TechCon 2023</h1>
+            <p>Join us for the biggest technology conference of the year featuring industry leaders, innovative workshops, and networking opportunities.</p>
+            <a href="register.html" class="btn">Register Now</a>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <h2>About The Conference</h2>
+            <p>TechCon brings together the brightest minds in technology to share knowledge, discuss emerging trends, and shape the future of the industry. This year's conference will feature over 50 speakers across 5 tracks with workshops, keynotes, and networking events.</p>
+            <p>Whether you're a developer, designer, entrepreneur, or tech enthusiast, TechCon 2023 has something for everyone.</p>
+        </div>
+    </section>
+
+    <section class="speakers">
+        <div class="container">
+            <h2 class="section-title">Featured Speakers</h2>
+            <div class="speakers-grid">
+                <div class="speaker-card">
+                    <div class="speaker-img">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Speaker 1">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Dr. Sarah Johnson</h3>
+                        <p>AI Researcher at TechFuture</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="speaker-card">
+                    <div class="speaker-img">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Speaker 2">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Michael Chen</h3>
+                        <p>Lead Developer at CodeSystems</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="speaker-card">
+                    <div class="speaker-img">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Speaker 3">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Lisa Rodriguez</h3>
+                        <p>UX Director at DesignHub</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="speakers.html" class="btn">View All Speakers</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="schedule">
+        <div class="container">
+            <h2 class="section-title">Conference Schedule</h2>
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Event</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="time-col">08:00 - 09:00</td>
+                        <td class="event-col">Registration and Breakfast</td>
+                        <td class="location-col">Main Lobby</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">09:00 - 10:00</td>
+                        <td class="event-col">Opening Keynote: The Future of Technology</td>
+                        <td class="location-col">Grand Ballroom</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">10:15 - 11:15</td>
+                        <td class="event-col">Breakout Session: AI Applications</td>
+                        <td class="location-col">Room A</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">10:15 - 11:15</td>
+                        <td class="event-col">Workshop: Web Development</td>
+                        <td class="location-col">Room B</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">11:30 - 12:30</td>
+                        <td class="event-col">Panel Discussion: Ethics in Tech</td>
+                        <td class="location-col">Grand Ballroom</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="schedule.html" class="btn">View Full Schedule</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="registration">
+        <div class="container">
+            <h2 class="section-title">Register Now</h2>
+            <div class="registration-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="ticket-type">Ticket Type</label>
+                        <select id="ticket-type" name="ticket-type" required>
+                            <option value="">Select ticket type</option>
+                            <option value="general">General Admission ($199)</option>
+                            <option value="student">Student ($99)</option>
+                            <option value="vip">VIP ($499)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="comments">Special Requirements</label>
+                        <textarea id="comments" name="comments"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Complete Registration</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speakers Page -->
+    <section id="speakers-page" class="page-header">
+        <div class="container">
+            <h1>Our Speakers</h1>
+        </div>
+    </section>
+
+    <section class="page-content">
+        <div class="container">
+            <h2 class="section-title">Meet Our Distinguished Speakers</h2>
+            <div class="speakers-grid">
+                <div class="speaker-card">
+                    <div class="speaker-img">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Speaker 1">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Dr. Sarah Johnson</h3>
+                        <p>AI Researcher at TechFuture</p>
+                        <p>Topic: The Future of Artificial Intelligence</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="speaker-card">
+                    <div class="speaker-img">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Speaker 2">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Michael Chen</h3>
+                        <p>Lead Developer at CodeSystems</p>
+                        <p>Topic: Modern Web Development Practices</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="speaker-card">
+                    <div class="speaker-img">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Speaker 3">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Lisa Rodriguez</h3>
+                        <p>UX Director at DesignHub</p>
+                        <p>Topic: Designing for Accessibility</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="speaker-card">
+                    <div class="speaker-img">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Speaker 4">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>David Kim</h3>
+                        <p>CTO at SecureNet</p>
+                        <p>Topic: Cybersecurity in 2023</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="speaker-card">
+                    <div class="speaker-img">
+                        <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Speaker 5">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Emma Wilson</h3>
+                        <p>Data Scientist at AnalyticsPro</p>
+                        <p>Topic: Big Data and Machine Learning</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="speaker-card">
+                    <div class="speaker-img">
+                        <img src="https://randomuser.me/api/portraits/men/88.jpg" alt="Speaker 6">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>James Peterson</h3>
+                        <p>Blockchain Developer at ChainTech</p>
+                        <p>Topic: The Future of Blockchain Technology</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Page -->
+    <section id="schedule-page" class="page-header">
+        <div class="container">
+            <h1>Conference Schedule</h1>
+        </div>
+    </section>
+
+    <section class="page-content">
+        <div class="container">
+            <h2 class="section-title">Day 1: October 15, 2023</h2>
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Event</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="time-col">08:00 - 09:00</td>
+                        <td class="event-col">Registration and Breakfast</td>
+                        <td class="location-col">Main Lobby</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">09:00 - 10:00</td>
+                        <td class="event-col">Opening Keynote: The Future of Technology (Dr. Sarah Johnson)</td>
+                        <td class="location-col">Grand Ballroom</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">10:15 - 11:15</td>
+                        <td class="event-col">Breakout Session: AI Applications (Dr. Sarah Johnson)</td>
+                        <td class="location-col">Room A</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">10:15 - 11:15</td>
+                        <td class="event-col">Workshop: Web Development (Michael Chen)</td>
+                        <td class="location-col">Room B</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">11:30 - 12:30</td>
+                        <td class="event-col">Panel Discussion: Ethics in Tech (Moderator: Lisa Rodriguez)</td>
+                        <td class="location-col">Grand Ballroom</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">12:30 - 14:00</td>
+                        <td class="event-col">Lunch Break</td>
+                        <td class="location-col">Dining Hall</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">14:00 - 15:00</td>
+                        <td class="event-col">Cybersecurity Workshop (David Kim)</td>
+                        <td class="location-col">Room C</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">15:15 - 16:15</td>
+                        <td class="event-col">Data Science in Practice (Emma Wilson)</td>
+                        <td class="location-col">Room A</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">16:30 - 17:30</td>
+                        <td class="event-col">Blockchain Technology Overview (James Peterson)</td>
+                        <td class="location-col">Room B</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h2 class="section-title" style="margin-top: 50px;">Day 2: October 16, 2023</h2>
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Event</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="time-col">09:00 - 10:00</td>
+                        <td class="event-col">Morning Keynote: Innovation in Design (Lisa Rodriguez)</td>
+                        <td class="location-col">Grand Ballroom</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">10:15 - 11:15</td>
+                        <td class="event-col">Advanced Web Development Techniques (Michael Chen)</td>
+                        <td class="location-col">Room B</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">11:30 - 12:30</td>
+                        <td class="event-col">AI Ethics Roundtable</td>
+                        <td class="location-col">Room A</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">12:30 - 14:00</td>
+                        <td class="event-col">Lunch Break</td>
+                        <td class="location-col">Dining Hall</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">14:00 - 15:00</td>
+                        <td class="event-col">Hands-on Data Science Workshop (Emma Wilson)</td>
+                        <td class="location-col">Room C</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">15:15 - 16:15</td>
+                        <td class="event-col">Building Secure Applications (David Kim)</td>
+                        <td class="location-col">Room A</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">16:30 - 17:30</td>
+                        <td class="event-col">Closing Keynote: The Next Decade in Tech (All Speakers)</td>
+                        <td class="location-col">Grand Ballroom</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Registration Page -->
+    <section id="register-page" class="page-header">
+        <div class="container">
+            <h1>Register for TechCon 2023</h1>
+        </div>
+    </section>
+
+    <section class="page-content">
+        <div class="container">
+            <div class="registration-form">
+                <h2 class="section-title" style="text-align: center; margin-bottom: 30px;">Registration Form</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company/Organization</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+                    <div class="form-group">
+                        <label for="job-title">Job Title</label>
+                        <input type="text" id="job-title" name="job-title">
+                    </div>
+                    <div class="form-group">
+                        <label for="ticket-type">Ticket Type</label>
+                        <select id="ticket-type" name="ticket-type" required>
+                            <option value="">Select ticket type</option>
+                            <option value="general">General Admission ($199)</option>
+                            <option value="student">Student ($99 - Student ID required)</option>
+                            <option value="vip">VIP ($499 - Includes exclusive events and premium seating)</option>
+                            <option value="group">Group (5+ tickets, 15% discount)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Which days will you attend?</label>
+                        <div style="margin-top: 8px;">
+                            <input type="checkbox" id="day1" name="days" value="day1" checked>
+                            <label for="day1" style="display: inline; margin-left: 5px;">October 15</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="day2" name="days" value="day2" checked>
+                            <label for="day2" style="display: inline; margin-left: 5px;">October 16</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="dietary">Dietary Requirements</label>
+                        <select id="dietary" name="dietary">
+                            <option value="none">None</option>
+                            <option value="vegetarian">Vegetarian</option>
+                            <option value="vegan">Vegan</option>
+                            <option value="gluten-free">Gluten-Free</option>
+                            <option value="other">Other (please specify in comments)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="comments">Special Requirements or Comments</label>
+                        <textarea id="comments" name="comments"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Complete Registration</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="speakers.html">Speakers</a>
+                <a href="schedule.html">Schedule</a>
+                <a href="register.html">Register</a>
+                <a href="#">Code of Conduct</a>
+                <a href="#">Contact Us</a>
+            </div>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+            <p class="copyright">© 2023 TechCon. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Note: In a real implementation, you would link to the actual Font Awesome CSS -->
+    <style>
+        /* This is a placeholder for Font Awesome icons */
+        .fab {
+            font-family: 'Arial';
+            font-style: normal;
+        }
+        .fa-facebook-f:before { content: 'f'; }
+        .fa-twitter:before { content: 't'; }
+        .fa-linkedin-in:before { content: 'in'; }
+        .fa-instagram:before { content: 'ig'; }
+        .fa-github:before { content: 'git'; }
+    </style>
+</body>
+</html>

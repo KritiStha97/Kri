@@ -1,32 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conference website</title>
-    <link rel="stylesheet" href="home.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
 </head>
-
-<body>
-    <header>
+<style>
+     .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/hh.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            height: 100vh;
+            padding: 100px 0;
+        }
         
-        <div class="logo">
-            <p>Events</p>
-        </div>
-        <nav class="Navbar">
-
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Session Speakers</a></li>
-                <li><a href="#">Schedule</a></li>
-                <li><a href="#">Register</a></li>
-                
-            </ul>
+        .container h1 {
+            margin-left: 100px;
+            margin-top: 100px;
+            font-size: 70px;
+            margin-bottom: 20px;
+        }
+        .container span{
+            padding-left: 70px;
+            color: #ff7200;
+        }
+        
+        .container p {
+            font-family:'Times New Roman', Times, serif;
+            margin-bottom: 85px;
+            font-size: 17px;
+            text-align: center;
+            max-width: 700px;
+            padding-left: 100px;
+        
+        }
+        
+        .btn {
+            margin-left: 190px;
+            background-color:#ff7200;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 9px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            opacity: 0.8;;
+        }
+        .about {
+            padding: 60px 0;
+            text-align: center;
+            background: rgb(54, 50, 50);
+        }
+        
+        .about h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: rgb(9, 173, 237);
+        }
+        
+        .about p {
+            margin-left: 300px;
+            margin-bottom: 40px;
+            color: white;
+            max-width: 800px;
             
-        </nav>
-      
+            font-size: 18px;
+        }
+        
+</style>
+<body>
+    <header class="navbar">
+        <a href="#" class="logo">TechCon</a>
+        <ul>
+           <li><a href="home.html">Home</a></li>
+           <li><a href="speaker.html">Speaker</a></li>
+           <li><a href="schedule.html">Schedule</a></li>
+          <a href="register.html"><button >Register</button></a>
+        </ul>
     </header>
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Digital Innovation <br><span>Conference</span></h1>
+            <p>Join us for the biggest technology conference of the year featuring industry leaders, innovative workshops, and networking opportunities.</p>
+            <a href="register.html" class="btn">Register Now</a>
+        </div>
+    </section>
+     <section class="about">
+        <div class="container">
+            <h2>About The Conference</h2>
+            <p>TechCon brings together the brightest minds in technology to share knowledge, discuss emerging trends, and shape the future of the industry. This year's conference will feature over 50 speakers across 5 tracks with workshops, keynotes, and networking events.</p>
+            <p>Whether you're a developer, designer, entrepreneur, or tech enthusiast, TechCon  has something for everyone.</p>
+        </div>
+    </section>
+    
 </body>
-
 </html>
