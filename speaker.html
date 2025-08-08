@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>speaker</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<style>
+  body {
+    overflow-x: hidden;
+  }
+
+  .cards-container {
+    margin-top: 70px;
+    padding-top: 70px;
+    padding-left: 90px;
+    width: 100vw;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 20px;
+    column-gap: 20px;
+  }
+
+  .card-container {
+    box-shadow: 0 0 20px grey;
+    margin: 20px;
+    height: 400px;
+    width: 300px;
+    border-radius: 7px;
+    transition: all 0.4s ease-in-out;
+
+  }
+
+  .card-container:hover {
+    box-shadow: 0 0 20px rgb(56, 49, 49);
+    transform: translateY(-10px);
+  }
+
+  .img-wrapper {
+    overflow: hidden;
+    height: 45%;
+    border-radius: 7px;
+  }
+
+  .img-wrapper img {
+
+    width: 100%;
+    height: 100%;
+
+  }
+
+  .des-section {
+    padding: 10px;
+    margin-top: 7px;
+    align-items: center;
+
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .des-section p {
+
+    overflow-y: auto;
+    height: 100px;
+  }
+
+  .des-section p::-webkit-scrollbar {
+    display: none;
+  }
+
+  .des-section span {
+    font-weight: bold;
+
+  }
+
+  .social-links {
+    display: flex;
+    gap: 25px;
+  }
+
+  .icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    aspect-ratio: 1/1;
+
+    border-radius: 50%;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .icon-wrapper img {
+    width: 100%;
+    height: 100%;
+
+  }
+
+  .icon-wrapper:hover {
+    /* box-shadow: 0 0 20px rgb(56, 49, 49); */
+    transform: scale(1.2);
+  }
+</style>
+
+<body>
+  <header class="navbar">
+    <a href="index.html" class="logo">TechCon</a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="speaker.html">Speaker</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <a href="register.html"><button>Register</button></a>
+    </ul>
+
+  </header>
+  <div class="cards-container">
+    <div class="card-container">
+      <div class="img-wrapper">
+        <img src="images/R.jpeg">
+      </div>
+      <div class="des-section">
+        <span>Sundar Pichai</span>
+        <p>Sundar Pichai is the CEO of Alphabet Inc. and Google. Born in India, he earned degrees from IIT Kharagpur,
+          Stanford University, and the Wharton School. Since joining Google in 2004, he has led the development of
+          products like Chrome, Android, and Google Maps. Known for his calm and inclusive leadership, Pichai now drives
+          Alphabet’s focus on AI, cloud technology, and global innovation.</p>
+        <div class="social-links">
+          <div class="icon-wrapper">
+            <a href=""><img src="images/facebook.png"></a>
+          </div>
+          <div class="icon-wrapper">
+            <img src="images/instagram.png">
+          </div>
+          <div class="icon-wrapper">
+            <img src="images/linkedin.png">
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="card-container">
+      <div class="img-wrapper">
+        <img src="images/em.avif">
+      </div>
+      <div class="des-section">
+        <span>Elon Musk</span>
+        <p>Elon Musk is a billionaire entrepreneur, engineer, and inventor best known for founding
+          and leading several groundbreaking companies, including Tesla, SpaceX, Neuralink, and The Boring Company.
+          Born in South Africa in 1971, Musk has become one of the most influential figures in technology and
+          innovation,
+          with a mission to advance humanity through sustainable energy, space exploration, and brain-computer
+          integration.
+          At Tesla, he has revolutionized the electric vehicle industry, while at SpaceX, he has significantly reduced
+          the
+          cost of space travel and aims to colonize Mars. His ventures also include Starlink, a satellite internet
+          service,
+          and X (formerly Twitter), which he acquired to promote free speech and build a multi-purpose platform.</p>
+        <div class="social-links">
+          <div class="icon-wrapper">
+            <img src="images/facebook.png">
+          </div>
+          <div class="icon-wrapper">
+            <img src="images/instagram.png">
+          </div>
+          <div class="icon-wrapper">
+            <img src="images/linkedin.png">
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="card-container">
+      <div class="img-wrapper">
+        <img src="images/markz.jpg">
+      </div>
+      <div class="des-section">
+        <span>Mark Zuckerberg</span>
+        <p>Mark Zuckerberg is an American technology entrepreneur and the co-founder
+          and CEO of Meta Platforms (formerly Facebook), the company behind Facebook,
+          Instagram, WhatsApp, and Threads. Born in 1984, he launched Facebook in 2004
+          while studying at Harvard, aiming to connect people online. Under his leadership,
+          the platform grew into one of the world’s largest social networks, transforming global
+          communication and digital advertising. In 2021, he rebranded Facebook as Meta to focus
+          on building the “metaverse,” a virtual reality-based future of social interaction. Known
+          for his impact on social media and digital culture, Zuckerberg is also a major figure in
+          discussions around data privacy, misinformation, and tech regulation. </p>
+        <div class="social-links">
+          <div class="icon-wrapper">
+            <img src="images/facebook.png">
+          </div>
+          <div class="icon-wrapper">
+            <img src="images/instagram.png">
+          </div>
+          <div class="icon-wrapper">
+            <img src="images/linkedin.png">
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="card-container">
+      <div class="img-wrapper">
+        <img src="images/bill.webp">
+      </div>
+      <div class="des-section">
+        <span>Bill Gates</span>
+        <p>Bill Gates is an American business magnate, software developer,
+          and philanthropist best known as the co-founder of Microsoft, the world’s
+          largest personal computer software company. Born in 1955, Gates played a key
+          role in the personal computing revolution by making software widely accessible
+          through the Windows operating system. Under his leadership, Microsoft became a
+          tech giant and a household name. In 2008, he stepped down from day-to-day operations
+          to focus on the Bill & Melinda Gates Foundation, one of the world’s largest charitable
+          organizations, working to improve global health, education, and reduce poverty. Gates is
+          widely respected for his innovation in technology and his commitment to global humanitarian efforts.</p>
+        <div class="social-links">
+          <div class="icon-wrapper">
+            <img src="images/facebook.png">
+          </div>
+          <div class="icon-wrapper">
+            <img src="images/instagram.png">
+          </div>
+          <div class="icon-wrapper">
+            <img src="images/linkedin.png">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container">
+      <div class="img-wrapper">
+        <img src="images/steve.jpg">
+      </div>
+      <div class="des-section">
+        <span>Steve Jobs</span>
+        <p>Steve Jobs is an American entrepreneur, inventor, and co-founder of
+          Apple Inc., known for revolutionizing the technology industry with products
+          like the iPhone, iPad, iPod, and Mac. Born in 1955, he played a key role in
+          shaping modern consumer electronics and digital media. After being ousted from Apple in 1985, he returned
+          in 1997 to rescue the company from near collapse, leading it to become one of
+          the most valuable tech companies in the world. His legacy continues to influence
+          innovation, creativity, and the way people interact with technology.
+        </p>
+        <div class="social-links">
+          <div class="icon-wrapper">
+            <img src="images/facebook.png">
+          </div>
+          <div class="icon-wrapper">
+            <img src="images/instagram.png">
+          </div>
+          <div class="icon-wrapper">
+            <img src="images/linkedin.png">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container">
+      <div class="img-wrapper">
+        <img src="images/larry-ellison-oracle.jpg">
+      </div>
+      <div class="des-section">
+        <span>Larry Ellison</span>
+        <p>Larry Ellison is an American entrepreneur and the co-founder of Oracle
+          Corporation, one of the world’s leading software companies specializing
+          in database technology and enterprise software. Born in 1944, Ellison
+          played a major role in the rise of relational database systems, which
+          became essential for businesses and governments worldwide. Under his
+          leadership, Oracle grew into a global tech giant, offering cloud
+          solutions, software, and hardware systems. Known for his bold personality
+          and competitive nature, Ellison has also invested in technology,
+          real estate, and sailing. He remains one of the richest people in the
+          world and a key figure in the evolution of enterprise computing.</p>
+        <div class="social-links">
+          <div class="icon-wrapper">
+            <img src="images/facebook.png">
+          </div>
+          <div class="icon-wrapper">
+            <img src="images/instagram.png">
+          </div>
+          <div class="icon-wrapper">
+            <img src="images/linkedin.png">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
